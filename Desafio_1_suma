@@ -1,0 +1,13 @@
+# Define dos variables con números específicos asignados por ti.
+# Suma esos dos números y almacena el resultado en una tercera variable.
+# Muestra el resultado de la suma.
+
+
+a = 11    #defino variable a
+b = 10    #defino variable b
+
+print("variable a:",(a) ,"y variable b: ",(b))
+input("Presiona Enter para realizar el calculo...")
+
+suma = a + b  # realizo la operación correspondiente y se la asigno a la variable suma
+print("El total de la suma de ay b es: ",(suma))   # imprimo en la pantalla el valor de la suma
