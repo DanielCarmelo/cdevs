@@ -13,7 +13,7 @@ texto_intro = "Este programa calcula el área de un rectángulo."
 texto_area = "El área del rectángulo se calcula multiplicando el ancho por el largo."
 
 # Calculamos el área
-area = ancho * largo  # asignamos a la variable area el producto del largo y el ancho
+area = ancho * largo  # asignamos a la variable area el producto del largo por el ancho
 
 # Presentamos el resultado
 
