@@ -16,9 +16,9 @@ texto_area = "El área del rectángulo se calcula multiplicando el ancho por el 
 area = ancho * largo  # asignamos a la variable area el producto del largo y el ancho
 
 # Presentamos el resultado
-# resultado = f"{texto_intro}\n{texto_area}\nEl ancho del rectángulo es: {ancho} unidades.\nEl largo del rectángulo es: {largo} unidades.\nEl área del rectángulo es: {area} unidades cuadradas."
-print(texto_intro)
-print(texto_area)
-print("El ancho del rectángulo es: ", (ancho), "unidades.")
-print("El largo del rectángulo es: ", (largo), "unidades.")
-print("El área del rectángulo es: ", (area),"unidades cuadradas." )
+
+print(texto_intro)                                                    # imprimir en la pantalla texto_intro
+print(texto_area)                                                     # imprimir en la pantalla texto_area
+print("El ancho del rectángulo es: ", (ancho), "unidades.")           # imprimir en la pantalla el ancho
+print("El largo del rectángulo es: ", (largo), "unidades.")           # imprimir en la pantalla el largo
+print("El área del rectángulo es: ", (area),"unidades cuadradas." )   # imprimir en la pantalla el resultado del calculo del area
