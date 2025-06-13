@@ -1,0 +1,2 @@
+El alcance de una variable en Python (en inglés, scope) se refiere al lugar del código donde una variable es reconocida y puede ser usada.
+Dependiendo de dónde se declare, la variable puede ser local o global, y eso afecta cómo y dónde se puede acceder o modificar.
