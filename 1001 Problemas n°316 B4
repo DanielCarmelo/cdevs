@@ -1,0 +1,21 @@
+# Sangría
+# Conversión del input en números con la función int()
+# El encomillado del testo se puede usar: " o ´´
+# // Es correcto si queremos resultado sin decimales, si no utilizamos / y devuelve con decimales(float)
+
+
+
+
+def dividir(a, b):
+
+      resultado = a // b
+
+      print("El resultado es:", resultado)
+
+
+
+num1 = int(input("Ingrese el primer número: "))
+
+num2 = int(input("Ingrese el segundo número: "))
+
+dividir(num1, num2)
