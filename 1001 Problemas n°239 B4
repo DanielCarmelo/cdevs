@@ -1,0 +1,7 @@
+En Python, usar módulos con import sirve para organizar mejor el código, 
+sobre todo cuando los programas se hacen más largos. 
+En vez de escribir todo en un solo archivo, podés separar las funciones en diferentes archivos
+.py y después usarlas cuando las necesites.
+
+Por ejemplo, si tenés un archivo que se llama calculadora.py con funciones como sumar o restar,
+podés usar esas funciones en otro archivo escribiendo:
