@@ -1,3 +1,4 @@
-Carlos cree que usar variables globales siempre está bien, pero eso no es correcto. Abusar de ellas puede causar errores difíciles de encontrar, hacer el código más confuso y complicado de mantener. También dificulta hacer pruebas y trabajar en equipo.
-
+Carlos cree que usar variables globales siempre está bien, pero eso no es correcto. 
+Abusar de ellas puede causar errores difíciles de encontrar, hacer el código más confuso y complicado de mantener. 
+También dificulta hacer pruebas y trabajar en equipo.
 En vez de usar variables globales, es mejor pasar datos por parámetros, usar clases u objetos, o mantener los valores dentro de funciones. Así el código es más claro, ordenado y fácil de mejorar.
