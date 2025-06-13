@@ -1,0 +1,16 @@
+Para definir una función en Python que reciba y trabaje con listas, lo que hago es usar la palabra def, ponerle un nombre a la función, y dentro de los paréntesis paso una lista como parámetro. 
+Después, dentro de la función, puedo usar un bucle for para recorrer la lista, o hacer operaciones como sacar el promedio, contar elementos, multiplicarlos, etc.
+
+Ejem: si quiero una función que reciba una lista con números y devuelva el promedio, hago esto:
+
+
+
+
+
+def promedio(lista):
+
+  if len(lista) == 0:
+
+    return 0
+
+  return sum(lista) / len(lista)
