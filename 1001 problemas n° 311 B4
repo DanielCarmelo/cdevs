@@ -1,0 +1,35 @@
+No tiene sentido inicializar a = 0 dentro de la función incrementar, porque interpretado así, la función siempre ejecutará lo siguiente cada vez que se llame:
+
+Creará una nueva variable local a asignándola a 0.
+
+La incrementará en 1.
+
+Y luego olvidará ese valor al salir de la función.
+
+Eso implica que la función no afecta la a global, y por tanto print(a) seguirá mostrando 10. Además, como no devolvemos ningún valor (return),
+la función no comunica nada de manera útil ni siquiera a nivel local.
+
+Opción 1: Usar global
+
+a = 10
+
+def incrementar():
+    global a       # Indicamos que usaremos la variable global 'a'
+    a += 1         # Incrementamos sobre la misma variable
+
+incrementar()
+print(a)  # Imprime 11
+La palabra clave global hace que Python referencie la a global en lugar de crear una local 
+
+Opción 2: Devolver el nuevo valor (más limpio)
+
+
+a = 10
+
+def incrementar(valor):
+    return valor + 1
+
+a = incrementar(a)
+print(a)  # Imprime 11
+Este enfoque evita efectos secundarios, es modular y se recomienda por buenas prácticas .
+
