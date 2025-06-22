@@ -1,0 +1,16 @@
+
+def leer_radio():
+        s = input("Ingrese el radio de la esfera (solo dígitos numéricos, opcional punto decimal): ")
+        valor = float(s)  # Verifica si la entrada puede ser convertida a float
+      
+
+# Calcula el volumen de una esfera con alta precisión de pi
+def volumen(r):
+    pi = 3.141592653589793
+    return (4.0 / 3.0) * pi * r**3  # Aplica la fórmula V = 4/3·π·r³
+
+# --- Bloque principal del programa --- #
+
+radio = leer_radio()  # Obtiene radio
+resultado = volumen(radio)  # Calcula el volumen
+print(f"El volumen de la esfera es: {resultado:.2F}")  # Imprime con 2 decimales
