@@ -1,0 +1,11 @@
+# Solicita al usuario que ingrese un texto
+texto = input("Ingrese un texto: ")
+
+# Divide el texto en palabras usando espacios como separadores
+palabras = texto.split()
+
+# Cuenta la cantidad de palabras
+cantidad_palabras = len(palabras)
+
+# Muestra el resultado
+print(f"El texto ingresado contiene {cantidad_palabras} palabra(s).")
