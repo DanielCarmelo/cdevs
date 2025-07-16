@@ -1,0 +1,26 @@
+def clasificar_numeros(a, b, c):
+    # Verificamos si 'a' es menor que 'b' y 'b' es menor que 'c' para que estén en orden ascendente
+    if a < b and b < c:
+        return a, b, c  # Ya están ordenados
+
+    # Si no, realizamos las comparaciones necesarias para clasificarlos
+    elif a < c and c < b:
+        return a, c, b  # 'a' es el menor, 'c' es el siguiente, y 'b' es el mayor
+
+    elif b < a and a < c:
+        return b, a, c  # 'b' es el menor, 'a' es el siguiente, y 'c' es el mayor
+
+    elif b < c and c < a:
+        return b, c, a  # 'b' es el menor, 'c' es el siguiente, y 'a' es el mayor
+
+    elif c < a and a < b:
+        return c, a, b  # 'c' es el menor, 'a' es el siguiente, y 'b' es el mayor
+
+    else:
+        return c, b, a  # Si ninguna de las anteriores se cumple, entonces 'c' es el menor, 'b' es el siguiente y 'a' es el mayor
+
+
+# Ejemplo de uso
+numeros = (5, 3, 8)
+resultado = clasificar_numeros(*numeros)
+print("Los números clasificados en orden ascendente son:", resultado)
