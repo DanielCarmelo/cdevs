@@ -1,0 +1,13 @@
+# Solicita los datos al usuario
+moneda_local = input("Ingrese el nombre de su moneda local: ")
+moneda_destino = input("Ingrese el nombre de la moneda a convertir: ")
+
+# Solicita la cantidad y la tasa de cambio
+cantidad = float(input(f"Ingrese la cantidad en {moneda_local}: "))
+tasa_cambio = float(input(f"Ingrese la tasa de cambio de 1 {moneda_local} a {moneda_destino}: "))
+
+# Realiza la conversión
+resultado = cantidad * tasa_cambio
+
+# Muestra el resultado
+print(f"{cantidad:.2f} {moneda_local} equivalen a {resultado:.2f} {moneda_destino}.")
