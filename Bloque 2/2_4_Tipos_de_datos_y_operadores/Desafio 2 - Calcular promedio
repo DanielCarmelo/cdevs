@@ -1,0 +1,19 @@
+# Definimos una lista de números
+lista = [6, 7, 10, 8,9]
+
+# Inicializamos la variable para almacenar la suma total de los elementos
+total = 0
+
+# Inicializamos la variable para almacenar el promedio
+promedio = 0
+
+# Recorremos cada elemento de la lista
+for i in range(len(lista)):
+    # Sumamos el valor del elemento actual al total
+    total = total + lista[i]
+
+# Calculamos el promedio dividiendo el total por la cantidad de elementos
+promedio = total / len(lista)
+
+# Mostramos el promedio calculado
+print("El promedio es:", promedio)
