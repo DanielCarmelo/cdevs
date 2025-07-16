@@ -1,0 +1,25 @@
+# Definimos una función llamada contar_pares que recibe una lista de números como argumento
+def contar_pares(lista):
+    # Inicializamos un contador en 0, que se encargará de contar los números pares
+    contador = 0
+    
+    # Recorremos cada número de la lista usando un ciclo for
+    for numero in lista:
+        # Comprobamos si el número es par (si el resto de dividirlo por 2 es 0)
+        if numero % 2 == 0:
+            # Si es par, incrementamos el contador en 1
+            contador += 1
+    
+    # Al finalizar el ciclo, devolvemos el valor de contador, que es la cantidad de números pares
+    return contador
+
+# Ejemplo de uso de la función
+# Definimos una lista de números
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Llamamos a la función contar_pares pasando la lista 'numeros' como argumento
+# El resultado se guarda en la variable resultado
+resultado = contar_pares(numeros)
+
+# Imprimimos el resultado, que es la cantidad de números pares en la lista
+print("Cantidad de números pares:", resultado)
