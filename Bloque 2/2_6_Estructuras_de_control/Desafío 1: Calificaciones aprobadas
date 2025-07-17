@@ -1,0 +1,18 @@
+# Pedimos la cantidad de calificaciones que se ingresarán
+cantidad = int(input("¿Cuántas calificaciones vas a ingresar? "))
+
+# Inicializamos contadores
+aprobados = 0
+desaprobados = 0
+
+# Bucle para ingresar las calificaciones
+for i in range(cantidad):
+    nota = float(input(f"Ingrese la calificación #{i + 1}: "))
+    if nota >= 7:
+        aprobados += 1
+    else:
+        desaprobados += 1
+
+# Mostramos los resultados
+print(f"Cantidad de estudiantes aprobados: {aprobados}")
+print(f"Cantidad de estudiantes desaprobados: {desaprobados}")
