@@ -1,0 +1,11 @@
+# Solicita todas las calificaciones en una sola línea
+entrada = input("Ingrese todas las calificaciones separadas por comas: ")
+
+# Separa la cadena en una lista de cadenas y las convierte a números
+calificaciones = [float(nota.strip()) for nota in entrada.split(',')]
+
+# Calcula el promedio
+promedio = sum(calificaciones) / len(calificaciones)
+
+# Muestra el resultado formateado
+print(f"El promedio de las calificaciones es: {promedio:.2f}")
