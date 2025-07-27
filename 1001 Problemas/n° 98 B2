@@ -1,0 +1,10 @@
+import math
+
+# Solicitar al usuario el ángulo en radianes
+angulo = float(input("Introduce el ángulo en radianes: "))
+
+# Calcular el seno usando math.sin
+seno = math.sin(angulo)
+
+# Mostrar el resultado
+print(f"El seno de {angulo} radianes es: {seno}")
