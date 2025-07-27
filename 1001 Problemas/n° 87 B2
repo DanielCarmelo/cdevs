@@ -1,0 +1,17 @@
+# Programa para sumar todos los números divisibles por x en un rango
+
+# Pedir los datos al usuario
+x = int(input("Ingrese el número divisor (x): "))
+inicio = int(input("Ingrese el número de inicio del rango: "))
+fin = int(input("Ingrese el número final del rango: "))
+
+# Variable para guardar la suma
+suma = 0
+
+# Recorrer el rango y sumar los que sean divisibles por x
+for numero in range(inicio, fin + 1):
+    if numero % x == 0:
+        suma += numero
+
+# Mostrar el resultado
+print(f"La suma de los números divisibles por {x} entre {inicio} y {fin} es: {suma}")
