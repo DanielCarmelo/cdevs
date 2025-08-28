@@ -6,7 +6,7 @@ class Libro:
         self.__autor = autor
         self.__isbn = isbn
 
-    # Métodos getter: devuelven el valor de cada atributo
+    # Métodos get: devuelven el valor de cada atributo
     def get_titulo(self):
         return self.__titulo
 
@@ -16,7 +16,7 @@ class Libro:
     def get_isbn(self):
         return self.__isbn
 
-    # Métodos setter: permiten modificar el valor de cada atributo
+    # Métodos set: permiten modificar el valor de cada atributo
     def set_titulo(self, nuevo_titulo):
         self.__titulo = nuevo_titulo
 
@@ -34,14 +34,14 @@ class LibroDigital(Libro):
         self.__formato = formato  # e.g.: 'PDF', 'EPUB'
         self.__tamaño_archivo = tamaño_archivo  # En MB
 
-    # metodos get
+    # métodos get
     def get_formato(self):
         return self.__formato
 
     def get_tamaño_archivo(self):
         return self.__tamaño_archivo
 
-    # metodos set
+    # métodos set
     def set_formato(self, nuevo_formato):
         self.__formato = nuevo_formato
 
