@@ -1,0 +1,86 @@
+max_node=0
+
+#definir clase nodo
+
+
+class Nodo:
+    def __init__(self, key):
+        self.izq = None
+        self.der = None
+        self.val = key
+
+# Crear el nodo raíz
+raiz = Nodo(18)
+
+# Añadir nodos hijos
+raiz.izq = Nodo(16)
+raiz.der = Nodo(20)
+
+# Añadir nodos hijos al nodo izquierdo del raíz
+raiz.izq.izq = Nodo(8)
+raiz.izq.der = Nodo(10)
+
+# Añadir nodos hijos al nodo derecho del raíz
+raiz.der.izq = Nodo(22)
+raiz.der.der = Nodo(24)
+
+# Añadir nodos hijos al nodo hijo derecho del hijo izquierdo del raíz
+raiz.izq.der.izq = Nodo(6)
+raiz.izq.der.der = Nodo(4)
+
+# Añadir nodos hijos al nodo hijo derecho del hijo derecho del raíz
+raiz.der.der.izq = Nodo(30)
+raiz.der.der.der = Nodo(32)
+
+"""    18
+      /   \
+    16      20
+   / \     /  \
+  8  10   22   24
+ / \           /  \
+6   4         30  32
+
+"""
+
+
+
+# Función para recorrido inorden e impresión de suma local
+
+
+def print_postorder(raiz):
+    global max_node  # Declarar que se usará la variable global
+
+    if raiz:
+        # Recorrido del subárbol izquierdo
+        print_postorder(raiz.izq)
+
+        # Recorrido del subárbol derecho
+        print_postorder(raiz.der)
+
+        # Imprime el valor del nodo actual
+        print(raiz.val, end=" ")
+
+        # Cálculo seguro de la suma del nodo actual y sus hijos directos
+       
+        if raiz.izq:
+          
+            if raiz.izq.val > max_node:
+                max_node = raiz.izq.val
+        if raiz.der:
+           
+            if raiz.der.val > max_node:
+                max_node = raiz.der.val
+
+        # Verifica si el valor del nodo actual es el mayor
+        if raiz.val > max_node:
+            max_node = raiz.val
+
+     
+
+    return max_node
+
+# Ejecutar el recorrido postorden
+valor_maximo = print_postorder(raiz)
+print(f"\nValor máximo encontrado en el árbol: {valor_maximo}")
+
+
