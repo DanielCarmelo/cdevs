@@ -1,0 +1,17 @@
+import random
+
+def generar_temperaturas(cantidad, minimo=-10.0, maximo=40.0):
+    temperaturas = []
+
+    for _ in range(cantidad):
+        temp = round(random.uniform(minimo, maximo), 2)  # Redondea a 2 decimales
+        temperaturas.append(temp)
+
+    return temperaturas
+
+# Ejemplo de uso
+datos_climaticos = generar_temperaturas(100)  # Genera 100 temperaturas simuladas
+
+# Muestra los primeros 10 valores
+print("Temperaturas simuladas:")
+print(datos_climaticos[:10])
