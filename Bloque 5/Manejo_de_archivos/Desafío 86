@@ -1,0 +1,20 @@
+# Función para registrar un préstamo de libro
+def registrar_prestamo():
+    print("Registro de préstamo de libro")
+
+    # Solicita los datos al usuario
+    libro = input("Nombre del libro: ")
+    prestatario = input("Nombre del prestatario: ")
+    fecha = input("Fecha del préstamo (AAAA-MM-DD): ")
+
+    # Formato del registro
+    registro = f"{libro} | {prestatario} | {fecha}\n"
+
+    # Abre el archivo en modo 'append' para no sobrescribir
+    with open("prestamos.txt", "a") as archivo:
+        archivo.write(registro)
+
+    print("Préstamo registrado correctamente.")
+
+# Ejecuta la función
+registrar_prestamo()
