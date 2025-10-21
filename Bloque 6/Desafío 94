@@ -1,0 +1,33 @@
+# Listas de participantes por concurso
+astronomia = {
+    "usuario1@1001problemas.com",
+    "usuario2@1001problemas.com",
+    "usuario3@1001problemas.com"
+}
+
+matematica = {
+    "usuario2@1001problemas.com",
+    "usuario3@1001problemas.com",
+    "usuario4@1001problemas.com"
+}
+
+programacion = {
+    "usuario3@1001problemas.com",
+    "usuario4@1001problemas.com",
+    "usuario5@1001problemas.com"
+}
+
+# Participaron en todos los concursos (intersección)
+todos = astronomia & matematica & programacion
+print("Participantes en todos los concursos:")
+print(todos)
+
+# Solo participaron en Programación (diferencia)
+solo_programacion = programacion - (astronomia | matematica)
+print("\n Participantes solo en Programación:")
+print(solo_programacion)
+
+#  Participaron en al menos uno (unión)
+todos_los_usuarios = astronomia | matematica | programacion
+print("\n Todos los usuarios únicos:")
+print(todos_los_usuarios)
