@@ -15,7 +15,7 @@ def palabras_mas_comunes(archivo_txt, top=5):
         contador = Counter(palabras)
 
         # Mostrar las palabras más comunes
-        print(f"\n🔍 Las {top} palabras más comunes en '{archivo_txt}':")
+        print(f"\n Las {top} palabras más comunes en '{archivo_txt}':")
         for palabra, frecuencia in contador.most_common(top):
             print(f" - '{palabra}': {frecuencia} veces")
 
