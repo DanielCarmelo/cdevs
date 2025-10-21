@@ -1,0 +1,44 @@
+'prestamos.txt'
+
+Cien años de soledad | Juan Pérez | 2025-10-21  
+Rayuela | María Gómez | 2025-10-22  
+Ficciones | Luis Torres | 2025-10-23 
+----------------------------------------------------------------------------
+
+def eliminar_prestamo():
+    try:
+        # Leer todos los registros
+        with open("prestamos.txt", "r") as archivo:
+            prestamos = archivo.readlines()
+
+        # Verificar si hay registros
+        if not prestamos:
+            print("No hay registros de préstamos para eliminar.")
+            return
+
+        # Mostrar los registros numerados
+        print("\n Préstamos registrados:")
+        for i, linea in enumerate(prestamos, start=1):
+            print(f"{i}. {linea.strip()}")
+
+        # Solicitar al usuario cuál eliminar
+        opcion = input("\n Ingrese el número del préstamo que desea eliminar: ")
+
+        if opcion.isdigit():
+            indice = int(opcion) - 1
+            if 0 <= indice < len(prestamos):
+                eliminado = prestamos.pop(indice)
+                # Reescribir el archivo sin el registro eliminado
+                with open("prestamos.txt", "w") as archivo:
+                    archivo.writelines(prestamos)
+                print(f"\n Registro eliminado: {eliminado.strip()}")
+            else:
+                print(" Número fuera de rango.")
+        else:
+            print(" Entrada inválida. Debe ingresar un número.")
+
+    except FileNotFoundError:
+        print("El archivo 'prestamos.txt' no existe.")
+
+------------------------USO----------------------------------------------------
+eliminar_prestamo()
