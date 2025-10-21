@@ -1,0 +1,43 @@
+"inventario.csv"
+Cien años de soledad,5  
+Rayuela,3  
+Ficciones,2  
+
+
+------------------------------------------------------------------------------
+
+def actualizar_inventario(nombre_libro, nueva_cantidad):
+    actualizado = False
+    lineas_actualizadas = []
+
+    try:
+        # Leer todas las líneas del archivo
+        with open("inventario.csv", "r") as archivo:
+            for linea in archivo:
+                if "," in linea:
+                    libro, cantidad = linea.strip().split(",")
+                    if libro.strip().lower() == nombre_libro.strip().lower():
+                        lineas_actualizadas.append(f"{libro},{nueva_cantidad}\n")
+                        actualizado = True
+                    else:
+                        lineas_actualizadas.append(linea)
+        
+        # Si se encontró el libro, reescribir el archivo con los cambios
+        if actualizado:
+            with open("inventario.csv", "w") as archivo:
+                archivo.writelines(lineas_actualizadas)
+            print(f"Copias actualizadas para '{nombre_libro}'.")
+        else:
+            print(f"El libro '{nombre_libro}' no se encuentra en el inventario.")
+
+    except FileNotFoundError:
+        print("El archivo 'inventario.csv' no existe.")
+
+----------------------------------------------------------------USO--------------
+libro = input("Ingrese el nombre del libro a actualizar: ")
+copias = input("Ingrese la nueva cantidad de copias disponibles: ")
+
+if copias.isdigit():
+    actualizar_inventario(libro, int(copias))
+else:
+    print("La cantidad debe ser un número entero.")
