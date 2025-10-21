@@ -1,0 +1,33 @@
+traducciones = {
+    "hello": {"es": "hola", "fr": "bonjour", "pr": "olá", "it": "ciao", "de": "hallo"},
+    "world": {"es": "mundo", "fr": "monde", "pr": "mundo", "it": "mondo", "de": "welt"},
+    "book":  {"es": "libro", "fr": "livre", "pr": "livro", "it": "libro", "de": "buch"},
+    "school":{"es": "escuela", "fr": "école", "pr": "escola", "it": "scuola", "de": "schule"}
+}
+
+def traducir_multilingue(palabra_en, idiomas):
+    resultados = {}
+
+    if palabra_en in traducciones:
+        for idioma in idiomas:
+            traduccion = traducciones[palabra_en].get(idioma)
+            if traduccion:
+                resultados[idioma] = traduccion
+            else:
+                resultados[idioma] = "No disponible"
+    else:
+        print(f" La palabra '{palabra_en}' no está en el diccionario.")
+        return {}
+
+   return resultados
+
+
+----------------------------USO-------------------------------------------------------------
+palabra = "school"
+idiomas_a_buscar = ["es", "fr", "it", "de", "ru"]  # Incluye un idioma no disponible
+
+resultado = traducir_multilingue(palabra, idiomas_a_buscar)
+
+print(f"\n Traducciones de '{palabra}':")
+for idioma, traduccion in resultado.items():
+    print(f" - {idioma}: {traduccion}")
