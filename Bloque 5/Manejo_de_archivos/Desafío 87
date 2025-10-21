@@ -1,0 +1,20 @@
+def buscar_libros_por_autor(nombre_autor):
+    encontrados = []
+
+    try:
+        with open("libros.txt", "r") as archivo:
+            for linea in archivo:
+                if "|" in linea:
+                    libro, autor = linea.strip().split("|")
+                    if autor.strip().lower() == nombre_autor.strip().lower():
+                        encontrados.append(libro.strip())
+
+        if encontrados:
+            print(f"\n Libros escritos por {nombre_autor}:")
+            for libro in encontrados:
+                print(f" - {libro}")
+        else:
+            print(f"\n No se encontraron libros escritos por '{nombre_autor}'.")
+
+    except FileNotFoundError:
+        print(" El archivo 'libros.txt' no existe.")
