@@ -1,0 +1,19 @@
+import random
+
+def seleccionar_ganadores(participantes, cantidad_ganadores):
+    if cantidad_ganadores > len(participantes):
+        print("La cantidad de ganadores no puede superar el número de participantes.")
+        return []
+
+    ganadores = random.sample(participantes, cantidad_ganadores)
+    print(f"\n Ganadores del sorteo ({cantidad_ganadores} seleccionados):")
+    for i, nombre in enumerate(ganadores, start=1):
+        print(f"{i}. {nombre}")
+    return ganadores
+
+------------------------------------------------USO----------------------------------
+# Lista simulada de participantes
+grupo = ["Ana", "Luis", "María", "Jorge", "Sofía", "Carlos", "Valentina", "Tomás", "Lucía", "Martín"]
+
+# Seleccionar 3 ganadores únicos
+seleccionar_ganadores(grupo, 3)
