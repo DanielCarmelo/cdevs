@@ -1,0 +1,22 @@
+import random
+
+def lanzar_dados(cantidad_lanzamientos):
+    caras = [1, 2, 3, 4, 5, 6]
+    resultados = []
+
+    for _ in range(cantidad_lanzamientos):
+        dado1 = random.choices(caras, k=1)[0]
+        dado2 = random.choices(caras, k=1)[0]
+        resultados.append((dado1, dado2))
+
+    return resultados
+
+
+----------------------USO-------------------------------
+# Simular 10 lanzamientos de dos dados
+
+lanzamientos = lanzar_dados(10)
+
+print("Resultados de lanzamientos:")
+for i, (d1, d2) in enumerate(lanzamientos, start=1):
+   print(f"{i}. Dado 1: {d1}, Dado 2: {d2} → Total: {d1 + d2}")
