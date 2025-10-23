@@ -1,0 +1,25 @@
+def buscar_estudiante(lista_ordenada, nombre_objetivo):
+    """
+    Realiza una búsqueda binaria en una lista ordenada de nombres.
+    Devuelve la posición del estudiante si lo encuentra, o un mensaje si no está.
+    """
+    izquierda = 0
+    derecha = len(lista_ordenada) - 1
+
+    while izquierda <= derecha:
+        medio = (izquierda + derecha) // 2
+        nombre_medio = lista_ordenada[medio]
+
+        if nombre_medio == nombre_objetivo:
+            return f"Estudiante '{nombre_objetivo}' encontrado en la posición {medio}."
+        elif nombre_objetivo < nombre_medio:
+            derecha = medio - 1
+        else:
+            izquierda = medio + 1
+
+    return f"El estudiante '{nombre_objetivo}' no se encuentra en la lista."
+
+# Ejemplo de uso
+estudiantes = ["Ana", "Bruno", "Carla", "Daniel", "Elena", "Federico", "Gabriela"]
+print(buscar_estudiante(estudiantes, "Daniel"))     # Estudiante encontrado
+print(buscar_estudiante(estudiantes, "Lucía"))      # Estudiante no encontrado
