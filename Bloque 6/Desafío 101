@@ -1,0 +1,25 @@
+# Desafío 101: Historial médico inmutable
+
+# 1. Lista de registros médicos: cada tupla contiene (fecha, paciente, diagnóstico)
+registros = [
+    ("2025-01-10", "Ana", "Hipertensión"),
+    ("2025-02-15", "Luis", "Diabetes"),
+    ("2025-03-05", "Ana", "Migraña"),
+    ("2025-04-20", "Carlos", "Hipertensión"),
+    ("2025-05-12", "Sofía", "Alergia"),
+    ("2025-06-18", "Luis", "Hipertensión"),
+    ("2025-07-22", "Ana", "Alergia")
+]
+
+# 2. Consultar el historial completo de un paciente específico
+paciente_consultado = "Ana"
+print(f" Historial médico de {paciente_consultado}:")
+for fecha, paciente, diagnostico in registros:
+    if paciente == paciente_consultado:
+        print(f"- {fecha}: {diagnostico}")
+
+# 3. Contar cuántos diagnósticos distintos han sido registrados
+# Se usa un conjunto para evitar duplicados
+diagnosticos_unicos = {diagnostico for _, _, diagnostico in registros}
+print(f"\n Diagnósticos distintos registrados: {len(diagnosticos_unicos)}")
+print("Listado de diagnósticos:", diagnosticos_unicos)
