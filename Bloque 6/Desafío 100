@@ -1,0 +1,26 @@
+# Desafío 100: Análisis deportivo con conjuntos
+
+# 1. Conjuntos de atletas por torneo
+torneo_1 = {"Ana", "Luis", "Carlos", "Marta"}
+torneo_2 = {"Luis", "Marta", "Sofía", "Tomás"}
+torneo_3 = {"Marta", "Carlos", "Julia", "Luis"}
+
+# 2. Identificar atletas que participaron en todos los torneos
+# Se usa la intersección de los tres conjuntos
+participantes_todos = torneo_1 & torneo_2 & torneo_3
+print(" Atletas que participaron en todos los torneos:", participantes_todos)
+
+# 3. Detectar atletas que participaron exclusivamente en un único torneo
+# Se calcula la diferencia entre cada torneo y la unión de los otros dos
+solo_torneo_1 = torneo_1 - (torneo_2 | torneo_3)
+solo_torneo_2 = torneo_2 - (torneo_1 | torneo_3)
+solo_torneo_3 = torneo_3 - (torneo_1 | torneo_2)
+
+# Se agrupan todos los atletas exclusivos
+participantes_exclusivos = solo_torneo_1 | solo_torneo_2 | solo_torneo_3
+print(" Atletas que participaron exclusivamente en un único torneo:", participantes_exclusivos)
+
+# 4. Calcular la cantidad total de atletas únicos que compitieron durante el año
+# Se usa la unión de todos los conjuntos
+todos_los_atletas = torneo_1 | torneo_2 | torneo_3
+print(f" Total de atletas únicos que compitieron: {len(todos_los_atletas)}")
