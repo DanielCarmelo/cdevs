@@ -1,0 +1,23 @@
+# Desafío 81: Recorrido por niveles de estudiantes
+
+# 1. Árbol representado como diccionario: grado → lista de estudiantes
+escuela = {
+    12: ["Ana", "Luis"],
+    11: ["Sofía", "Carlos"],
+    10: ["Marta"],
+    9:  ["Tomás", "Julia", "Raúl"],
+    8:  ["Elena"],
+    7:  ["Nicolás", "Valentina"],
+    6:  ["Pedro"],
+    5:  ["Lucía", "Diego"],
+    4:  ["Camila"],
+    3:  ["Joaquín"],
+    2:  ["Isabel"],
+    1:  ["Mateo", "Rocío"]
+}
+
+# 2. Recorrido por niveles: del grado más alto al más bajo
+print("Recorrido por niveles (grado descendente):\n")
+for grado in sorted(escuela.keys(), reverse=True):
+    estudiantes = escuela[grado]
+    print(f"Grado {grado}: {', '.join(estudiantes)}")
