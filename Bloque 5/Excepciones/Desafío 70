@@ -1,0 +1,33 @@
+# Desafío 70: Excepción personalizada para raíces cuadradas
+
+import math
+
+# 1. Definimos una excepción personalizada
+class NegativeNumberError(Exception):
+    """Se lanza cuando se intenta calcular la raíz cuadrada de un número negativo."""
+    pass
+
+# 2. Función que calcula la raíz cuadrada con manejo de excepciones
+def raiz_cuadrada(n):
+    try:
+        # Verifica si el número es negativo
+        if n < 0:
+            raise NegativeNumberError("No se puede calcular la raíz cuadrada de un número negativo.")
+
+        # Calcula la raíz cuadrada
+        resultado = math.sqrt(n)
+        print(f"La raíz cuadrada de {n} es: {resultado:.2f}")
+
+    except NegativeNumberError as ne:
+        print(f"Error personalizado: {ne}")
+
+    except TypeError:
+        print("Error: El valor ingresado no es numérico.")
+
+    except Exception as e:
+        print(f"Error inesperado: {e}")
+
+# 3. Ejemplos de uso
+raiz_cuadrada(25)     # Correcto
+raiz_cuadrada(-9)     # Dispara NegativeNumberError
+raiz_cuadrada("hola") # Dispara TypeError
