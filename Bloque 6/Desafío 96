@@ -1,0 +1,43 @@
+inventario = {
+    "A001": {"nombre": "Teclado", "precio": 1200.0, "stock": 10},
+    "A002": {"nombre": "Mouse", "precio": 800.0, "stock": 15},
+}
+
+# Diccionario principal del inventario
+inventario = {}
+
+# Función para agregar un nuevo producto
+def agregar_producto(codigo, nombre, precio, stock):
+    if codigo in inventario:
+        print(f"El producto con código {codigo} ya existe.")
+    else:
+        inventario[codigo] = {"nombre": nombre, "precio": precio, "stock": stock}
+        print(f"Producto {nombre} agregado correctamente.")
+
+# Función para actualizar el stock de un producto existente
+def actualizar_stock(codigo, cantidad):
+    if codigo in inventario:
+        inventario[codigo]["stock"] += cantidad
+        print(f"Stock actualizado. Nuevo stock de {inventario[codigo]['nombre']}: {inventario[codigo]['stock']}")
+    else:
+        print(f"No se encontró el producto con código {codigo}.")
+
+# Función para buscar y mostrar los detalles de un producto
+def buscar_producto(codigo):
+    if codigo in inventario:
+        producto = inventario[codigo]
+        print(f"Detalles del producto {codigo}:")
+        print(f"Nombre: {producto['nombre']}")
+        print(f"Precio: ${producto['precio']}")
+        print(f"Stock disponible: {producto['stock']}")
+    else:
+        print(f"No se encontró el producto con código {codigo}.")
+
+# Ejemplo de uso
+agregar_producto("A001", "Teclado", 1200.0, 10)
+agregar_producto("A002", "Mouse", 800.0, 15)
+actualizar_stock("A001", 5)
+buscar_producto("A001")
+buscar_producto("A003")  # Producto inexistente
+
+
