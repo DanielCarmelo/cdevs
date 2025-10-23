@@ -1,0 +1,33 @@
+import math
+
+# Desafío extra: Gestión de coordenadas de satélites
+
+# 1. Diccionario de satélites con coordenadas como tuplas (x, y, z)
+# Clave: nombre del satélite | Valor: tupla de coordenadas
+satélites = {
+    "Satélite A": (1200, 3400, 5600),
+    "Satélite B": (800, 2200, 3100),
+    "Satélite C": (1500, 4000, 6000),
+    "Satélite D": (300, 900, 1200),
+    "Satélite E": (2000, 5000, 7000)
+}
+
+# 2. Función para calcular la distancia euclidiana al origen (0, 0, 0)
+def distancia_al_origen(coord):
+    x, y, z = coord
+    return math.sqrt(x**2 + y**2 + z**2)
+
+# 3. Mostrar la distancia de cada satélite al origen
+print("Distancias al origen:")
+distancias = {}  # Diccionario auxiliar para guardar distancias
+for nombre, coordenadas in satélites.items():
+    distancia = distancia_al_origen(coordenadas)
+    distancias[nombre] = distancia
+    print(f"- {nombre}: {distancia:.2f} km")
+
+# 4. Identificar el satélite más cercano y el más lejano
+más_cercano = min(distancias, key=distancias.get)
+más_lejano = max(distancias, key=distancias.get)
+
+print(f"\n Satélite más cercano: {más_cercano} ({distancias[más_cercano]:.2f} km)")
+print(f" Satélite más lejano: {más_lejano} ({distancias[más_lejano]:.2f} km)")
