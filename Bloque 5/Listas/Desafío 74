@@ -1,0 +1,21 @@
+# Desafío 74: Suma de elementos en posiciones correspondientes entre listas de diferente longitud
+
+# 1. Definimos dos listas de números enteros con longitudes distintas
+lista1 = [3, 7, 2, 9]
+lista2 = [5, 1, 4]
+
+# 2. Determinamos la longitud máxima entre ambas listas
+longitud_maxima = max(len(lista1), len(lista2))
+
+# 3. Extendemos ambas listas con ceros para igualar su longitud
+# Esto evita errores al sumar posiciones que no existen en la lista más corta
+lista1_ext = lista1 + [0] * (longitud_maxima - len(lista1))
+lista2_ext = lista2 + [0] * (longitud_maxima - len(lista2))
+
+# 4. Sumamos los elementos en las posiciones correspondientes
+suma_posicional = [lista1_ext[i] + lista2_ext[i] for i in range(longitud_maxima)]
+
+# 5. Mostramos los resultados
+print("Lista 1:", lista1)
+print("Lista 2:", lista2)
+print("Suma posicional:", suma_posicional)
