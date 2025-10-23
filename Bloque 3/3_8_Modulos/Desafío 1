@@ -1,0 +1,38 @@
+import string
+from string import Template
+
+def solo_letras(texto):
+    """
+    Verifica si el texto contiene solo letras (mayúsculas/minúsculas) y espacios.
+    Utiliza string.ascii_letters para validar caracteres alfabéticos.
+    """
+    return all(c in string.ascii_letters or c.isspace() for c in texto)
+
+def eliminar_puntuacion(texto):
+    """
+    Elimina todos los signos de puntuación del texto.
+    Utiliza string.punctuation para identificar los símbolos.
+    """
+    return ''.join(c for c in texto if c not in string.punctuation)
+
+def plantilla_mensaje(nombre, promedio):
+    """
+    Genera un mensaje personalizado usando string.Template.
+    Ideal para informes o retroalimentación automática.
+    """
+    plantilla = Template("Estimado/a $nombre, su promedio final es $promedio.")
+    return plantilla.substitute(nombre=nombre, promedio=promedio)
+
+# Ejecución de ejemplo
+if __name__ == "__main__":
+    texto_original = "¡Hola, Daniel! ¿Cómo estás?"
+    print("Texto original:", texto_original)
+
+    print("\n ¿Contiene solo letras?")
+    print(solo_letras(texto_original))  # False
+
+    print("\n Texto sin puntuación:")
+    print(eliminar_puntuacion(texto_original))  # Hola Daniel Cómo estás
+
+    print("\n Mensaje personalizado:")
+    print(plantilla_mensaje("Daniel", 9.7))  # Estimado/a Daniel, su promedio final es 9.7.
