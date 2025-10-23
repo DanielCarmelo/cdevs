@@ -1,0 +1,7 @@
+# Desafío 75: Generar potencias de 2 usando list comprehension
+
+# 1. Crear la lista de potencias de 2 desde el exponente 0 al 9
+potencias = [2**n for n in range(10)]
+
+# 2. Mostrar la lista resultante
+print("Potencias de 2 del 0 al 9:", potencias)
