@@ -1,0 +1,14 @@
+# Desafío 72: Verificación de código de producto en inventario
+
+# Lista de códigos de productos en el inventario
+inventario = ["A001", "B205", "C310", "D478", "E590", "F612"]
+
+# Solicita al usuario un código de producto
+codigo = input("Ingrese el código de producto a buscar: ").strip()
+
+# Verifica si el código está en la lista
+if codigo in inventario:
+    posicion = inventario.index(codigo)  # Obtiene la posición del código
+    print(f"Código encontrado en la posición {posicion} de la lista.")
+else:
+    print("Código no encontrado en el inventario.")
