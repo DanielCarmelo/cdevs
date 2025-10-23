@@ -1,0 +1,27 @@
+# Desafío 98: Plataforma educativa en línea
+
+# 1. Cursos ofrecidos por la plataforma
+cursos_ofrecidos = {"Matemática", "Historia", "Programación", "Biología"}
+
+# 2. Diccionario que registra los cursos realizados por cada estudiante
+# Clave: nombre del estudiante | Valor: conjunto de cursos completados
+estudiantes = {
+    "Ana": {"Matemática", "Historia", "Programación", "Biología"},
+    "Luis": {"Matemática", "Programación"},
+    "Sofía": {"Biología"},
+    "Carlos": {"Historia", "Biología", "Programación"},
+    "Julia": {"Programación"},
+}
+
+# 3. Estudiantes que completaron todos los cursos ofrecidos
+print(" Estudiantes que completaron todos los cursos:")
+for nombre, cursos in estudiantes.items():
+    if cursos == cursos_ofrecidos:
+        print(f"- {nombre}")
+
+# 4. Estudiantes que solo completaron un curso específico
+curso_especifico = "Programación"
+print(f"\n Estudiantes que solo completaron el curso '{curso_especifico}':")
+for nombre, cursos in estudiantes.items():
+    if cursos == {curso_especifico}:
+        print(f"- {nombre}")
