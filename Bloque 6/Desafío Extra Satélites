@@ -30,4 +30,4 @@ más_cercano = min(distancias, key=distancias.get)
 más_lejano = max(distancias, key=distancias.get)
 
 print(f"\n Satélite más cercano: {más_cercano} ({distancias[más_cercano]:.2f} km)")
-print(f" Satélite más lejano: {más_lejano} ({distancias[más_lejano]:.2f} km)")
+print(f" Satélite más lejano : {más_lejano} ({distancias[más_lejano]:.2f} km)")
