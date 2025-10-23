@@ -1,0 +1,23 @@
+# Desafío 99: Simulación climática con tuplas
+
+# 1. Lista de registros climáticos: cada tupla contiene (ciudad, temperatura, humedad)
+clima = [
+    ("Montevideo", 22.5, 65),
+    ("Salto", 28.0, 55),
+    ("Colonia", 19.0, 70),
+    ("Rivera", 25.5, 60),
+    ("Rocha", 17.5, 80)
+]
+
+# 2. Determinar la ciudad con la temperatura más alta
+ciudad_max_temp = max(clima, key=lambda x: x[1])  # x[1] es la temperatura
+print(f" Ciudad más cálida: {ciudad_max_temp[0]} con {ciudad_max_temp[1]}°C")
+
+# 3. Determinar la ciudad con la temperatura más baja
+ciudad_min_temp = min(clima, key=lambda x: x[1])
+print(f" Ciudad más fría: {ciudad_min_temp[0]} con {ciudad_min_temp[1]}°C")
+
+# 4. Calcular el promedio general de humedad
+total_humedad = sum(x[2] for x in clima)  # x[2] es la humedad
+promedio_humedad = total_humedad / len(clima)
+print(f" Promedio general de humedad: {promedio_humedad:.2f}%")
