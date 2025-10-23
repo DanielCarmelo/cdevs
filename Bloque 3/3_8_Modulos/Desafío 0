@@ -1,0 +1,12 @@
+import random
+
+def generar_numero_aleatorio():
+    """
+    Genera y devuelve un número aleatorio entre 1 y 100.
+    """
+    numero = random.randint(1, 100)
+    print(f"Número aleatorio generado: {numero}")
+    return numero
+
+# Ejecución del programa
+generar_numero_aleatorio()
