@@ -1,0 +1,25 @@
+# Desafío 68: Operaciones matemáticas con manejo de excepciones
+
+# 1. Lista de valores (puede incluir enteros, cadenas, ceros, etc.)
+valores = [10, 5, "a", 0, 2, None, 8]
+
+# 2. Recorremos la lista y realizamos una operación matemática sobre cada valor
+# En este caso: dividir 100 entre cada valor
+print("Resultados de la operación 100 / valor:\n")
+
+for i, valor in enumerate(valores):
+    try:
+        resultado = 100 / valor
+        print(f"Índice {i} → 100 / {valor} = {resultado:.2f}")
+
+    except ZeroDivisionError:
+        print(f"Índice {i} → Error: No se puede dividir por cero.")
+
+    except TypeError:
+        print(f"Índice {i} → Error: Tipo de dato no válido para la operación.")
+
+    except ValueError:
+        print(f"Índice {i} → Error: Valor no numérico.")
+
+    except Exception as e:
+        print(f"Índice {i} → Error inesperado: {e}")
