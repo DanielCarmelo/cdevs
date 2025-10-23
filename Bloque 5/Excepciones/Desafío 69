@@ -1,0 +1,39 @@
+# Desafío 69: Cálculo de factorial con manejo de excepciones
+
+import math
+
+def calcular_factorial(n):
+    try:
+        # Verifica si el valor es entero
+        if not isinstance(n, int):
+            raise TypeError("El valor debe ser un número entero.")
+
+        # Verifica si el número es negativo
+        if n < 0:
+            raise ValueError("No se puede calcular el factorial de un número negativo.")
+
+        # Verifica si el número es demasiado grande para ser procesado
+        if n > 1000:
+            raise OverflowError("El número es demasiado grande para calcular su factorial de forma segura.")
+
+        # Calcula el factorial usando math.factorial
+        resultado = math.factorial(n)
+        print(f"El factorial de {n} es: {resultado}")
+
+    except TypeError as te:
+        print(f"Error de tipo: {te}")
+
+    except ValueError as ve:
+        print(f"Error de valor: {ve}")
+
+    except OverflowError as oe:
+        print(f"Error de capacidad: {oe}")
+
+    except Exception as e:
+        print(f"Error inesperado: {e}")
+
+# Ejemplos de uso
+calcular_factorial(5)       # Correcto
+calcular_factorial(-3)      # Negativo
+calcular_factorial(3.5)     # No entero
+calcular_factorial(1500)    # Demasiado grande
