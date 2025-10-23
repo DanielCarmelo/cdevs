@@ -1,0 +1,12 @@
+# Desafío 73: Eliminación de duplicados en una lista de números
+
+# 1. Lista original con números repetidos
+numeros = [4, 7, 2, 4, 9, 2, 5, 7, 1, 9, 3]
+
+# 2. Eliminación de duplicados usando un conjunto
+# Los conjuntos no permiten elementos repetidos
+sin_duplicados = list(set(numeros))
+
+# 3. Mostrar resultados
+print("Lista original:", numeros)
+print("Lista sin duplicados:", sin_duplicados)
