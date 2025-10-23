@@ -1,0 +1,32 @@
+# Desafío 97: Operaciones entre conjuntos de datos
+# Se analizan tres grupos de encuestados según las plataformas que usan: Facebook, Instagram y Twitter (X)
+
+# 1. Definimos los conjuntos de usuarios por plataforma
+facebook = {"Ana", "Luis", "Carlos", "Marta", "Sofía"}
+instagram = {"Luis", "Marta", "Sofía", "Tomás", "Julia"}
+twitter = {"Marta", "Sofía", "Julia", "Carlos", "Elena"}
+
+# 2. Usuarios que usan las tres plataformas
+# Se calcula la intersección entre los tres conjuntos
+usuarios_tres = facebook & instagram & twitter
+print("Usuarios en las tres plataformas:", usuarios_tres)
+
+# 3. Usuarios que usan solo una plataforma
+# Se calcula la diferencia entre cada conjunto y la unión de los otros dos
+solo_facebook = facebook - (instagram | twitter)
+solo_instagram = instagram - (facebook | twitter)
+solo_twitter = twitter - (facebook | instagram)
+
+# Se agrupan todos los usuarios que están en una sola plataforma
+usuarios_solo_una = solo_facebook | solo_instagram | solo_twitter
+print("Usuarios que usan solo una plataforma:", usuarios_solo_una)
+
+# 4. Usuarios que usan al menos dos plataformas
+# Se calcula la intersección por pares y se suma la intersección triple
+fb_ig = facebook & instagram
+fb_tw = facebook & twitter
+ig_tw = instagram & twitter
+
+# Se agrupan todos los usuarios que están en al menos dos plataformas
+usuarios_dos_o_mas = (fb_ig | fb_tw | ig_tw)
+print("Usuarios que usan al menos dos plataformas:", usuarios_dos_o_mas)
