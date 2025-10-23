@@ -1,0 +1,32 @@
+# Lista de ventas: cada tupla representa una venta con (id_producto, cantidad, precio_unitario)
+ventas = [
+    (101, 3, 150.0),
+    (102, 5, 80.0),
+    (101, 2, 150.0),
+    (103, 1, 200.0),
+    (102, 4, 80.0),
+    (104, 6, 50.0),
+    (101, 1, 150.0)
+]
+
+# 1. Calcular el ingreso total generado por todas las ventas
+# Se multiplica cantidad por precio_unitario en cada tupla y se suman los resultados
+ingreso_total = sum(cantidad * precio for _, cantidad, precio in ventas)
+print(f"Ingreso total generado: ${ingreso_total:.2f}")
+
+# 2. Contar la cantidad total vendida por cada producto
+# Usamos defaultdict para acumular cantidades por id_producto
+from collections import defaultdict
+cantidad_por_producto = defaultdict(int)
+
+# Recorremos cada venta y sumamos la cantidad al producto correspondiente
+for id_producto, cantidad, _ in ventas:
+    cantidad_por_producto[id_producto] += cantidad
+
+# 3. Identificar el producto más vendido en términos de cantidad
+# Usamos max() con key para encontrar el id con mayor cantidad acumulada
+id_mas_vendido = max(cantidad_por_producto, key=cantidad_por_producto.get)
+cantidad_maxima = cantidad_por_producto[id_mas_vendido]
+
+# Mostramos el resultado
+print(f"Producto más vendido: ID {id_mas_vendido} con {cantidad_maxima} unidades")
