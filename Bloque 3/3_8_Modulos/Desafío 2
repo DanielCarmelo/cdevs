@@ -1,0 +1,17 @@
+import random
+import string
+
+def generar_contraseña():
+    """
+    Genera una contraseña aleatoria de 8 caracteres que incluye:
+    - Letras minúsculas
+    - Letras mayúsculas
+    - Dígitos numéricos
+    """
+    caracteres = string.ascii_letters + string.digits  # a-z, A-Z, 0-9
+    contraseña = ''.join(random.choice(caracteres) for _ in range(8))
+    print(f"Contraseña generada: {contraseña}")
+    return contraseña
+
+# Ejecución del programa
+generar_contraseña()
