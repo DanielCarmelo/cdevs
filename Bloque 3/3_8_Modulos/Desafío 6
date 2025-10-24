@@ -1,0 +1,17 @@
+from datetime import datetime
+
+# Función para solicitar una fecha al usuario y convertirla a objeto datetime
+def pedir_fecha(mensaje):
+    fecha_str = input(mensaje + " (formato: DD/MM/AAAA): ")
+    return datetime.strptime(fecha_str, "%d/%m/%Y")
+
+# Solicitar las dos fechas
+print("Calculadora de diferencia entre fechas")
+fecha1 = pedir_fecha("Ingrese la primera fecha")
+fecha2 = pedir_fecha("Ingrese la segunda fecha")
+
+# Calcular la diferencia
+diferencia = abs(fecha2 - fecha1)
+
+# Mostrar el resultado
+print(f"\nLa diferencia entre las fechas es de {diferencia.days} días.")
