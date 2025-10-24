@@ -1,0 +1,58 @@
+# ---------------------------------- formateador_texto.py-----------------------------
+
+def negrita(texto):
+    """Devuelve el texto en negrita usando formato Markdown."""
+    return f"**{texto}**"
+
+def italica(texto):
+    """Devuelve el texto en itálica usando formato Markdown."""
+    return f"*{texto}*"
+
+def subrayado(texto):
+    """Simula subrayado usando guiones bajos (no estándar en Markdown)."""
+    return f"__{texto}__"
+
+def tachado(texto):
+    """Devuelve el texto tachado usando Markdown."""
+    return f"~~{texto}~~"
+
+def mayusculas(texto):
+    """Convierte el texto a mayúsculas."""
+    return texto.upper()
+
+def minusculas(texto):
+    """Convierte el texto a minúsculas."""
+    return texto.lower()
+# main.py
+
+#------------------------------------------------------------------------------------
+from formateador_texto import negrita, italica, subrayado, tachado, mayusculas, minusculas
+
+texto = input("Ingrese el texto que desea formatear: ")
+
+print("\nFormatos disponibles:")
+print("1. Negrita")
+print("2. Itálica")
+print("3. Subrayado")
+print("4. Tachado")
+print("5. Mayúsculas")
+print("6. Minúsculas")
+
+opcion = input("Seleccione una opción (1-6): ")
+
+# Diccionario para mapear opciones a funciones
+opciones = {
+    "1": negrita,
+    "2": italica,
+    "3": subrayado,
+    "4": tachado,
+    "5": mayusculas,
+    "6": minusculas
+}
+
+# Aplicar formato si la opción es válida
+if opcion in opciones:
+    resultado = opciones[opcion](texto)
+    print(f"\nTexto formateado: {resultado}")
+else:
+    print("Opción inválida.")
