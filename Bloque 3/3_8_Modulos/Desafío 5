@@ -1,0 +1,41 @@
+import os
+
+def guardar_texto(nombre_archivo, contenido):
+    """
+    Guarda el contenido en un archivo de texto.
+    Si el archivo ya existe, lo sobrescribe.
+    """
+    with open(nombre_archivo, 'w') as archivo:
+        archivo.write(contenido)
+    print(f"Archivo guardado como: {os.path.abspath(nombre_archivo)}")
+
+def leer_texto(nombre_archivo):
+    """
+    Lee y muestra el contenido de un archivo de texto si existe.
+    """
+    if os.path.exists(nombre_archivo):
+        with open(nombre_archivo, 'r') as archivo:
+            contenido = archivo.read()
+        print(f"Contenido de '{nombre_archivo}':\n{contenido}")
+        return contenido
+    else:
+        print(f"El archivo '{nombre_archivo}' no existe.")
+        return None
+
+def listar_archivos_en_directorio():
+    """
+    Muestra los archivos en el directorio actual.
+    """
+    archivos = os.listdir()
+    print("Archivos en el directorio actual:")
+    for archivo in archivos:
+        print(" -", archivo)
+
+# Ejemplo de uso
+if __name__ == "__main__":
+    texto = """La educación es el arma más poderosa para cambiar el mundo."""
+    nombre = "mensaje_educativo.txt"
+
+    guardar_texto(nombre, texto)
+    leer_texto(nombre)
+    listar_archivos_en_directorio()
