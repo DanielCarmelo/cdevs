@@ -1,0 +1,49 @@
+import collections
+import matplotlib.pyplot as plt
+import string
+
+def analizar_frecuencia(texto, top_n=10):
+    """
+    Analiza el texto y devuelve las N palabras más comunes y su frecuencia.
+    Utiliza Counter del módulo collections.
+    """
+    # Normalización: minúsculas y sin puntuación
+    texto_limpio = texto.lower().translate(str.maketrans('', '', string.punctuation))
+    palabras = texto_limpio.split()
+
+    # Conteo de frecuencia
+    contador = collections.Counter(palabras)
+    palabras_comunes = contador.most_common(top_n)
+
+    return palabras_comunes
+
+def graficar_frecuencia(palabras_comunes):
+    """
+    Genera un gráfico de barras con las palabras más frecuentes.
+    Utiliza matplotlib.
+    """
+    palabras = [p[0] for p in palabras_comunes]
+    frecuencias = [p[1] for p in palabras_comunes]
+
+    plt.figure(figsize=(10, 6))
+    plt.bar(palabras, frecuencias, color='skyblue')
+    plt.title("Frecuencia de palabras más comunes")
+    plt.xlabel("Palabras")
+    plt.ylabel("Frecuencia")
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.show()
+
+# Ejemplo de uso
+if __name__ == "__main__":
+    texto_ejemplo = """
+    La educación transforma vidas. La educación es la base del desarrollo personal y social.
+    Una comunidad que invierte en educación construye un futuro más justo, equitativo y sostenible.
+    """
+
+    print("Palabras más comunes:")
+    comunes = analizar_frecuencia(texto_ejemplo, top_n=10)
+    for palabra, frecuencia in comunes:
+        print(f"{palabra}: {frecuencia}")
+
+    graficar_frecuencia(comunes)
